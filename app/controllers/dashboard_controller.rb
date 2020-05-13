@@ -27,7 +27,7 @@ class DashboardController < ApplicationController
 
     # 設定檔案
     Dir.entries(@path).each do |file|
-      @files << file if File.file?(@path+"/"+file)
+      @files << "#{@path}/#{file}" if File.file?(@path+"/"+file)
     end
   end
 
