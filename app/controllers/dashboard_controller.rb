@@ -22,12 +22,12 @@ class DashboardController < ApplicationController
 
     # 設定目錄
     Dir.entries(@path).each do |dir|
-      @dirs << "#{@path}/#{dir}" unless File.file?(dir)
+      @dirs << "#{@path}/#{dir}" unless File.file?(@path+"/"+dir)
     end
 
     # 設定檔案
     Dir.entries(@path).each do |file|
-      @files << file if File.file?(file)
+      @files << file if File.file?(@path+"/"+file)
     end
   end
 
